@@ -468,7 +468,7 @@ export default defineComponent({
         return
       }
       filterList.value = filterList.value.filter((book: Book) => {
-        return book.isFree == false
+        return (book.isFree == false) && (book.retailPrice > 0)
       })
     }
 

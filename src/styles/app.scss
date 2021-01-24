@@ -1,0 +1,89 @@
+// global styles start
+* {
+    box-sizing: border-box;
+    cursor: context-menu;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+// .v-main {
+//     background-color: #e9ebee;
+// }
+
+.app-content {
+    margin-top: 60px;
+}
+// global styles end
+
+
+// vuetify styles override start
+.expand-content > .v-expansion-panel-content__wrap {
+    padding: 0 16px 0;
+}
+
+.v-input > .v-input__control {
+    border-radius: 10px !important;
+}
+
+.v-input__control > .v-messages {
+    display: none;
+}
+
+.v-input__control > .v-text-field__details {
+    display: none;
+}
+
+.v-input__control > .v-input__slot > fieldset {
+    color: rgb(202, 198, 198) !important;
+}
+
+.v-input__append-inner > .v-input__icon--append > i {
+    color: rgb(202, 198, 198) !important;
+}
+
+.v-select__selections {
+    padding: 0;
+}
+
+.v-slider__track-container {
+    height: 5px !important;
+}
+
+.v-slider__track-container > .v-slider__track-background {
+    border-radius: 50px !important;
+}
+
+.v-select__selections {
+    padding: 0px !important;
+}
+
+.expand-label {
+  cursor: pointer !important;
+}
+
+.v-expansion-panel-header__icon > i {
+    cursor: pointer !important;
+}
+
+.v-skeleton-loader > .v-skeleton-loader__image {
+    height: 270px;
+}
+
+.v-responsive__content {
+    cursor: pointer;
+}
+
+.v-icon.v-icon::after {
+    display: none !important;
+}
+
+.pagination > div > div > div.v-input__slot > div.v-select__slot > div.v-input__append-inner > div > i::before {
+    font-size: 30px !important;
+    color: black  !important;
+    transition: 0s !important;
+}
+
+// vuetify styles override end

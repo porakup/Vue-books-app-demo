@@ -1,9 +1,9 @@
 # books-app
 
 ## Layout design
-```
-![Layout](./books-app-layout.png)
-```
+
+![Layout](books-app-layout.png)
+
 
 ## Project setup
 ```

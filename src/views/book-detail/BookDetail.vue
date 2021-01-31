@@ -573,6 +573,8 @@ export default defineComponent({
           }
         }
 
+        store.dispatch("setCurrentRouteAction", `/book/${bookId}`);
+
         onMounted( async () => {
           await initData();
         })

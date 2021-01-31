@@ -43,7 +43,7 @@ import { defineComponent, nextTick, ref } from '@vue/composition-api';
 
 export default defineComponent({ 
   name: 'SelectCustom'
-  ,setup(props, { emit }) {
+  ,setup() {
     
     const selectCustom = ref();
 
@@ -52,7 +52,6 @@ export default defineComponent({
       nextTick(() => {
         selectCustom.value.blur()
       })
-      emit('change');
     }
 
     return {

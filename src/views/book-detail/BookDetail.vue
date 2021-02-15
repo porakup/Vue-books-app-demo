@@ -71,7 +71,7 @@
               <div class="desc-container">
                 <!-- <span v-if="book.description && book.description.length > 500" :data-tooltip="book.description">{{book.description | shortDesc}}</span>
                 <span v-else>{{book.description}}</span> -->
-                <v-textarea v-if="book.description" v-html="book.description"></v-textarea>
+                <span v-if="book.description" v-html="book.description"></span>
                 <span v-else>-</span>
               </div>
           </v-col>

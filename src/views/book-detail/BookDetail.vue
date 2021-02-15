@@ -69,8 +69,10 @@
               </div>
 
               <div class="desc-container">
-                <span v-if="book.description && book.description.length > 500" :data-tooltip="book.description">{{book.description | shortDesc}}</span>
-                <span v-else>{{book.description}}</span>
+                <!-- <span v-if="book.description && book.description.length > 500" :data-tooltip="book.description">{{book.description | shortDesc}}</span>
+                <span v-else>{{book.description}}</span> -->
+                <v-textarea v-if="book.description" v-html="book.description"></v-textarea>
+                <span v-else>-</span>
               </div>
           </v-col>
       </div>
@@ -415,28 +417,29 @@
   margin-top: 10px;
   color: black;
   background-color:rgb(250, 244, 244);
-  height: 200px;
-  line-height: 20px;
+  // height: 200px;
+  // line-height: 20px;
   width: 700px;
   padding: 10px;
+  margin-bottom: 30px;
 }
-.desc-container > span {
-    margin-left: 20px;
-}
+// .desc-container > span {
+//     margin-left: 20px;
+// }
 
-.desc-container > span:hover::after {
-  content: attr(data-tooltip);
-  position: absolute;
-  left: 760px;
-  bottom: 200px;
-  font-size: 13px;
-  width: fit-content;
-  padding: 0 4px;
-  background: rgba(0,0,0,0.72);
-  color: white;
-  transform: translateX(-50%);
-  z-index: 12px;
-}
+// .desc-container > span:hover::after {
+//   content: attr(data-tooltip);
+//   position: absolute;
+//   left: 760px;
+//   bottom: 200px;
+//   font-size: 13px;
+//   width: fit-content;
+//   padding: 0 4px;
+//   background: rgba(0,0,0,0.72);
+//   color: white;
+//   transform: translateX(-50%);
+//   z-index: 12px;
+// }
 
 </style>
 

@@ -304,7 +304,7 @@ export default defineComponent({
 
     const filterList = ref<any>([]);
     const bookList = ref<any>([]);
-    const adsList = ref<any>([]);
+    // const adsList = ref<any>([]);
 
     const searchFlag = ref<boolean>(false);
     
@@ -396,22 +396,22 @@ export default defineComponent({
       await store.dispatch("addRequestAction");
       filterList.value = [...bookList.value];
       
-      if(adsList.value.length) {
-        let index = 0;
-        for(let i = 0; i < filterList.value.length; i++) {
-          if(filterList.value[i].ads === true){
-            continue;
-          }
-          const n = i + 1;
-          if(n % 5 === 0){
-            filterList.value.splice(n, 0, adsList.value[index]);
-            index++;
-          }
-          if((index -1) === (adsList.value.length - 1)) {
-            break;
-          }
-        }
-      }
+      // if(adsList.value.length) {
+      //   let index = 0;
+      //   for(let i = 0; i < filterList.value.length; i++) {
+      //     if(filterList.value[i].ads === true){
+      //       continue;
+      //     }
+      //     const n = i + 1;
+      //     if(n % 5 === 0){
+      //       filterList.value.splice(n, 0, adsList.value[index]);
+      //       index++;
+      //     }
+      //     if((index -1) === (adsList.value.length - 1)) {
+      //       break;
+      //     }
+      //   }
+      // }
       await store.dispatch("requestDoneAction");
     }
 
@@ -531,22 +531,22 @@ export default defineComponent({
         filterRating();
       }
 
-      if(adsList.value.length) {
-        let index = 0;
-        for(let i = 0; i < filterList.value.length; i++) {
-          if(filterList.value[i].ads === true){
-            continue;
-          }
-          const n = i + 1;
-          if(n % 5 === 0){
-            filterList.value.splice(n, 0, adsList.value[index]);
-            index++;
-          }
-          if((index -1) === (adsList.value.length - 1)) {
-            break;
-          }
-        }
-      }
+      // if(adsList.value.length) {
+      //   let index = 0;
+      //   for(let i = 0; i < filterList.value.length; i++) {
+      //     if(filterList.value[i].ads === true){
+      //       continue;
+      //     }
+      //     const n = i + 1;
+      //     if(n % 5 === 0){
+      //       filterList.value.splice(n, 0, adsList.value[index]);
+      //       index++;
+      //     }
+      //     if((index -1) === (adsList.value.length - 1)) {
+      //       break;
+      //     }
+      //   }
+      // }
       
       await store.dispatch("requestDoneAction");
     }
@@ -561,13 +561,13 @@ export default defineComponent({
           let { items } = response;
           if(items && items.length){
             items = mapToBook(items);
-            adsList.value = [];
-            for (let i = 0; i < items.length; i++) {
-              const n = i+1;
-              if(n % 5 === 0) {
-                adsList.value.push({title: `Advertisement ${n}`, ads: true});
-              }
-            }
+            // adsList.value = [];
+            // for (let i = 0; i < items.length; i++) {
+            //   const n = i+1;
+            //   if(n % 5 === 0) {
+            //     adsList.value.push({title: `Advertisement ${n}`, ads: true});
+            //   }
+            // }
           }
           return items
         }
@@ -748,7 +748,7 @@ export default defineComponent({
       filterList,
       bookList,
       searchFlag,
-      adsList,
+      // adsList,
       setPagination,
       interval
     };

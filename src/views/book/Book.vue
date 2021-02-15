@@ -572,11 +572,30 @@ export default defineComponent({
           return items
         }
       );
-      bookList.value = resp;
-      filterList.value = [...resp];
+      if(resp?.length){
+        const checkDupList = [];
+        for(let i = 0; i < resp.length; i++) {
+          const book = resp[i];
+          if(i === 0 && book.id) {
+            checkDupList.push(book);
+          }else if (i > 0) {
+            const prevBook: any = checkDupList[i-1];
+            if((!prevBook?.id || !book?.id || prevBook?.id === book?.id)) {
+              continue;
+            }else {
+              checkDupList.push(book);
+            }
+          }
+        }
+        bookList.value = checkDupList;
+        filterList.value = [...checkDupList];
       await filterBook();
+      }else {
+        bookList.value = [];
+        filterList.value = [];
+      }
       await store.dispatch("requestDoneAction");
-      await store.dispatch("clearQueryAction");
+      // await store.dispatch("clearQueryAction");
     }
 
     const setFilterIsEbook = async (val: string) =>{
@@ -667,9 +686,9 @@ export default defineComponent({
         },0);
     }
 
-    watch( () => queryState.value,
+    watch( () => queryState.value, // for submit search
         async (text) => {
-        if (text &&  !searchFlag.value) {
+        if (text &&  !searchFlag.value) { // for prevent search every input or race condition
           await searchBook();
         }
       });

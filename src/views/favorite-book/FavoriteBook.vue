@@ -90,6 +90,7 @@ export default defineComponent({
     FavoriteItem,
   },
   setup() {
+        store.dispatch("clearQueryAction");
         store.dispatch("addRequestAction");
         
         const requestState  = computed( () => { return store.getters.getRequest});

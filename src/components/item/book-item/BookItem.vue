@@ -186,7 +186,8 @@ export default defineComponent({
       }
     }
 
-    const gotoDetail = () => {
+    const gotoDetail = async () => {
+      await store.dispatch("setCurrentRouteAction", '/detail');
       router.push({ path: `/book/${bookId.value}` });
     }
 

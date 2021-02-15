@@ -456,6 +456,9 @@ export default defineComponent({
     Rating
   },
   setup() {
+
+        store.dispatch("clearQueryAction");
+
         const state = reactive({
           book: {}
         });
